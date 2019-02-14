@@ -1,5 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +13,25 @@ namespace SpecflowPages
     public class Driver
     {
         //Initialize the browser
-        public static IWebDriver driver { get; set; }
+        public static IWebDriver webDriver { get; set; }
 
-        public static void Initialize()
+        public static void DriverInitialize(string browser)
         {
-            //Defining the browser
-            driver = new ChromeDriver();
-            TurnOnWait();
-
+            switch (browser)
+            {
+                case "Chrome":
+                    webDriver = new ChromeDriver();
+                    break;
+                case "IE":
+                    webDriver = new InternetExplorerDriver();
+                    break;
+                case "Firefox":
+                    webDriver = new FirefoxDriver();
+                    break;
+            }
             //Maximise the window
-            driver.Manage().Window.Maximize();
+            webDriver.Manage().Window.Maximize();
+            TurnOnWait();
         }
 
         public static string BaseUrl
@@ -32,19 +43,19 @@ namespace SpecflowPages
         //Implicit Wait
         public static void TurnOnWait()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
         }
-
-        public static void NavigateUrl()
+        //Navigate to Website URL
+        public static void NavigateUrl(string url)
         {
-            driver.Navigate().GoToUrl(BaseUrl);
+            webDriver.Navigate().GoToUrl(url);
         }
 
         //Close the browser
         public static void Close()
         {
-            driver.Close();
+            webDriver.Close();
         }
 
     }

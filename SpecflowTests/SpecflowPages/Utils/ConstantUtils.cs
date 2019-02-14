@@ -9,16 +9,18 @@ namespace SpecflowPages
     public class ConstantUtils
     {
         //Base Url
-        public static string Url = "http://new-keys.azurewebsites.net/Account/Login";
+        public static string Url = "http://www.skillswap.pro/";
 
         //ScreenshotPath
-        public static string ScreenshotPath = @"C:\Users\chand\Desktop\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\Screenshots\";
+        public static string ScreenshotPath = @"C:\Users\chand\Desktop\Remote\Onboarding and Competition Tasks\Mars\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\Screenshots\";
 
         //ExtentReportsPath
-        public static string ReportsPath = @"C:\Users\chand\Desktop\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\Test.html";
+        public static string ReportsPath = @"C:\Users\chand\Desktop\Remote\Onboarding and Competition Tasks\Mars\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\Test.html";
 
         //ReportXML Path
-        public static string ReportXMLPath = @"C:\Users\chand\Desktop\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\ReportXML.xml";
+        public static string ReportXMLPath = @"C:\Users\chand\Desktop\Remote\Onboarding and Competition Tasks\Mars\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\TestReports\ReportXML.xml";
+
+      
 
     }
 }

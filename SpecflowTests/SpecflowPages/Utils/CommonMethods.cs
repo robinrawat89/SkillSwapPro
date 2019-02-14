@@ -2,9 +2,11 @@
 using RelevantCodes.ExtentReports;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace SpecflowPages
 {
@@ -34,8 +36,12 @@ namespace SpecflowPages
                 return fileName.ToString();
             }
         }
-        #endregion
 
+        internal IWebElement menuBarOptions(string menuOptions)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
 
 
         //ExtentReports
@@ -49,8 +55,7 @@ namespace SpecflowPages
         }
 
         #endregion
-
-
+        
 
         //Element Present
         #region Element Present
@@ -81,7 +86,7 @@ namespace SpecflowPages
         {
             try
             {
-                Driver.driver.FindElement(by);
+                Driver.webDriver.FindElement(by);
                 return true;
             }
             catch (NoSuchElementException)
@@ -89,6 +94,11 @@ namespace SpecflowPages
                 return false;
             }
         }
+
+        
+        //Find the menu option on the page
+        
+        
         #endregion
 
         

@@ -16,21 +16,19 @@ namespace SpecflowTests.Utils
         [BeforeScenario]
         public void SetUp()
         {
-            Initialize();
-            Thread.Sleep(500);
-
-            SpecflowPages.Utils.LoginPage.LoginStep();
                   
-            
+                      
         }
 
         [AfterScenario]
         public void TearDown()
         {
+            
+
             Thread.Sleep(500);
             // Screenshot
-            String img = SaveScreenShotClass.SaveScreenshot(Driver.driver, "Report");//AddScreenCapture(@"E:\Dropbox\VisualStudio\Projects\Beehive\TestReports\ScreenShots\");
-            test.Log(LogStatus.Info, "Image example: " + img);
+            string img = SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "Report");
+            test.Log(LogStatus.Info, "Snapshot below: " + test.AddScreenCapture(img));
 
             // end test. (Reports)
             CommonMethods.extent.EndTest(CommonMethods.test);
@@ -40,6 +38,8 @@ namespace SpecflowTests.Utils
 
             //Close the browser
             Close();
+
+            Driver.webDriver.Close();
         }
 
     }
