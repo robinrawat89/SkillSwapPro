@@ -55,7 +55,7 @@ namespace SpecflowPages
         }
 
         #endregion
-        
+
 
         //Element Present
         #region Element Present
@@ -95,13 +95,13 @@ namespace SpecflowPages
             }
         }
 
-        
+
         //Find the menu option on the page
-        
-        
+
+
         #endregion
 
-        
+
 
 
 

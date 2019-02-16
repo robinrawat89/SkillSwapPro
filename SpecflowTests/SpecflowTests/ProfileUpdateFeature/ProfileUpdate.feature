@@ -11,10 +11,10 @@ Then  User is able to Login
 
 
 Scenario Outline: 6 Check if user could able to add languages into profile
-	Given User clicked on the 'Skills' tab under Profile page
-	And  User click on Add New button
+	Given User clicked on the 'Languages' tab under Profile page
+	And  User click on Add New button for 'Languages'
 	When User is able to add a new entry for Language with values <Language> and <Language Level>
-	Then that language should be displayed on user profile listings
+	Then that <Language> language should be added to user profile
 
 Examples:
 		| Language | Language Level |

@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 
 namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
 {
-    //Background Steps
+    //Background Steps to Login into the applications
     [Binding]
     public class ProfileUpdateTest
     {
@@ -40,7 +40,7 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
            
             Assert.IsTrue(element.Displayed);
             Assert.IsTrue(element.Text.Contains("Sign Out"));
-            //Assert.AreEqual(element.Text.ToLower(), "Sign Out".ToLower());
+            
         }
 
         //Background Steps End
@@ -54,27 +54,32 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
             ProfileObject.clickMenuOptions(menuLanguage);
         }
 
-        //Click on AddNew Button
-        [Given(@"User click on Add New button")]
-        public void GivenUserClickOnAddNewButton()
+        
+        [Given(@"User click on Add New button for '(.*)'")]
+        public void GivenUserClickOnAddNewButtonFor(string addNew)
         {
             ProfilePage ProfileObject = new ProfilePage();
-            ProfileObject.clickAddNew();
+            ProfileObject.clickAddNew(addNew);
         }
+
 
 
         [When(@"User is able to add a new entry for Language with values (.*) and (.*)")]
         public void WhenUserIsAbleToAddANewEntryForLanguageWithValuesAnd(string language, string level)
         {
-            ScenarioContext.Current.Pending();
+            ProfilePage ProfileObject = new ProfilePage();
+            ProfileObject.addNewLanguage(language, level);
+
         }
 
 
-        [Then(@"that language should be displayed on user profile listings")]
-        public void ThenThatLanguageShouldBeDisplayedOnUserProfileListings()
+        [Then(@"that (.*) language should be added to user profile")]
+        public void ThenThatLanguageShouldBeAddedToUserProfile(string language)
         {
-            ScenarioContext.Current.Pending();
+            ProfilePage ProfileObject = new ProfilePage();
+            ProfileObject.countRows(language);
         }
+
         //New Language Added
     }
 }
