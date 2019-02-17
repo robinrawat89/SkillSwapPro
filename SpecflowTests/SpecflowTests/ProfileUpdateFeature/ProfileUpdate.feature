@@ -19,3 +19,14 @@ Scenario Outline: 6 Check if user could able to add languages into profile
 Examples:
 		| Language | Language Level |
 		| French   | Basic          |
+
+
+Scenario Outline: 7 Check if user could able to add skills into profile
+	Given User clicked on the 'Skills' tab under Profile page
+	And  User click on Add New button for 'Skills'
+	When User add a new skill <Skill> and <Skill Level>
+	Then that <Skill> skill should be added to user profile
+
+Examples:
+		| Skill | Skill Level  |
+		| C#    | Intermediate |

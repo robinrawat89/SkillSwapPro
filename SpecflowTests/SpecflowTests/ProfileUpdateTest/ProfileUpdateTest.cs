@@ -36,11 +36,15 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
         public void ThenUserIsAbleToLogin()
         {
             Driver.TurnOnWait();
+            
+            //by using CommonMethods
+            //CommonMethods.ElementVisible(Driver.webDriver, "XPath", "//*[@class='item']/button");
+
+            //by using assertion
             IWebElement element = Driver.webDriver.FindElement(By.XPath("//*[@class='item']/button"));
-           
             Assert.IsTrue(element.Displayed);
             Assert.IsTrue(element.Text.Contains("Sign Out"));
-            
+
         }
 
         //Background Steps End
@@ -50,16 +54,16 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
         [Given(@"User clicked on the '(.*)' tab under Profile page")]
         public void GivenUserClickedOnTheTabUnderProfilePage(string menuLanguage)
         {
-            ProfilePage ProfileObject = new ProfilePage();
-            ProfileObject.clickMenuOptions(menuLanguage);
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.clickMenuOptions(menuLanguage);
         }
 
         
         [Given(@"User click on Add New button for '(.*)'")]
         public void GivenUserClickOnAddNewButtonFor(string addNew)
         {
-            ProfilePage ProfileObject = new ProfilePage();
-            ProfileObject.clickAddNew(addNew);
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.clickAddNew(addNew);
         }
 
 
@@ -67,8 +71,8 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
         [When(@"User is able to add a new entry for Language with values (.*) and (.*)")]
         public void WhenUserIsAbleToAddANewEntryForLanguageWithValuesAnd(string language, string level)
         {
-            ProfilePage ProfileObject = new ProfilePage();
-            ProfileObject.addNewLanguage(language, level);
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.addNewLanguage(language, level);
 
         }
 
@@ -76,10 +80,28 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
         [Then(@"that (.*) language should be added to user profile")]
         public void ThenThatLanguageShouldBeAddedToUserProfile(string language)
         {
-            ProfilePage ProfileObject = new ProfilePage();
-            ProfileObject.countRows(language);
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.rowPresent(language);
         }
 
         //New Language Added
+
+
+        //Adding a New Skill
+
+        [When(@"User add a new skill (.*) and (.*)")]
+        public void WhenUserAddANewSkillAnd(string skill, string skillLevel)
+        {
+            ProfilePage skillObject = new ProfilePage();
+            skillObject.addNewSkill(skill,skillLevel);
+        }
+
+        [Then(@"that (.*) skill should be added to user profile")]
+        public void ThenThatSkillShouldBeAddedToUserProfile(string skill)
+        {
+            ProfilePage skillObject = new ProfilePage();
+            skillObject.rowSkillPresent(skill);
+        }
+
     }
 }

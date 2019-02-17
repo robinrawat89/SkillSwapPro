@@ -128,6 +128,38 @@ this.FeatureBackground();
 this._6CheckIfUserCouldAbleToAddLanguagesIntoProfile("French", "Basic", ((string[])(null)));
 #line hidden
         }
+        
+        public virtual void _7CheckIfUserCouldAbleToAddSkillsIntoProfile(string skill, string skillLevel, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 Check if user could able to add skills into profile", exampleTags);
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 25
+ testRunner.Given("User clicked on the \'Skills\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.And("User click on Add New button for \'Skills\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.When(string.Format("User add a new skill {0} and {1}", skill, skillLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.Then(string.Format("that {0} skill should be added to user profile", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("7 Check if user could able to add skills into profile: C#")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "C#")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill", "C#")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill Level", "Intermediate")]
+        public virtual void _7CheckIfUserCouldAbleToAddSkillsIntoProfile_C()
+        {
+#line 24
+this._7CheckIfUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((string[])(null)));
+#line hidden
+        }
     }
 }
 #pragma warning restore

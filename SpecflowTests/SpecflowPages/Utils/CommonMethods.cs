@@ -32,15 +32,11 @@ namespace SpecflowPages
                 fileName.Append(DateTime.Now.ToString("_dd-mm-yyyy_mss"));
                 //fileName.Append(DateTime.Now.ToString("dd-mm-yyyym_ss"));
                 fileName.Append(".jpeg");
-                screenShot.SaveAsFile(fileName.ToString(), ScreenshotImageFormat.Jpeg);
+                screenShot.SaveAsFile(fileName.ToString(), OpenQA.Selenium.ScreenshotImageFormat.Jpeg);
                 return fileName.ToString();
             }
         }
 
-        internal IWebElement menuBarOptions(string menuOptions)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
 
@@ -94,7 +90,6 @@ namespace SpecflowPages
                 return false;
             }
         }
-
 
         //Find the menu option on the page
 
