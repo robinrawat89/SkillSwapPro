@@ -30,3 +30,14 @@ Scenario Outline: 7 Check if user could able to add skills into profile
 Examples:
 		| Skill | Skill Level  |
 		| C#    | Intermediate |
+
+
+Scenario Outline: 8 Check if user could able to add education into profile
+	Given User clicked on the 'Education' tab under Profile page
+	And  User click on Add New button for 'Education'
+	When User add a new <College>, <Country>,<Title>,<Degree> and <Year of Graduation>
+	Then that <College>,<Country> education should be added to user profile
+
+Examples:
+		| College                        | Country     | Title | Degree | Year of Graduation |
+		| Unitec Institute of Technology | Afghanistan | B.A   | Honors | 2019               |

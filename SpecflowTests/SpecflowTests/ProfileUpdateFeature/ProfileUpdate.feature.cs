@@ -160,6 +160,42 @@ this.FeatureBackground();
 this._7CheckIfUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((string[])(null)));
 #line hidden
         }
+        
+        public virtual void _8CheckIfUserCouldAbleToAddEducationIntoProfile(string college, string country, string title, string degree, string yearOfGraduation, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 Check if user could able to add education into profile", exampleTags);
+#line 35
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 36
+ testRunner.Given("User clicked on the \'Education\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
+ testRunner.And("User click on Add New button for \'Education\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.When(string.Format("User add a new {0}, {1},{2},{3} and {4}", college, country, title, degree, yearOfGraduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.Then(string.Format("that {0},{1} education should be added to user profile", college, country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("8 Check if user could able to add education into profile: Unitec Institute of Tec" +
+            "hnology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Unitec Institute of Technology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:College", "Unitec Institute of Technology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Country", "Afghanistan")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Title", "B.A")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Degree", "Honors")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year of Graduation", "2019")]
+        public virtual void _8CheckIfUserCouldAbleToAddEducationIntoProfile_UnitecInstituteOfTechnology()
+        {
+#line 35
+this._8CheckIfUserCouldAbleToAddEducationIntoProfile("Unitec Institute of Technology", "Afghanistan", "B.A", "Honors", "2019", ((string[])(null)));
+#line hidden
+        }
     }
 }
 #pragma warning restore

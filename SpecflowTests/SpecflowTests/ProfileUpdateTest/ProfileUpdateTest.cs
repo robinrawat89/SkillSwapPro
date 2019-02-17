@@ -84,9 +84,7 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
             languageObject.rowPresent(language);
         }
 
-        //New Language Added
-
-
+        
         //Adding a New Skill
 
         [When(@"User add a new skill (.*) and (.*)")]
@@ -102,6 +100,23 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
             ProfilePage skillObject = new ProfilePage();
             skillObject.rowSkillPresent(skill);
         }
+
+        //Adding New Education
+        [When(@"User add a new (.*), (.*),(.*),(.*) and (.*)")]
+        public void WhenUserAddANewAnd(string college, string country, string title, string degree, string year)
+        {
+            ProfilePage educationObject = new ProfilePage();
+            educationObject.addNewEducation(college, country, title, degree, year);
+        }
+
+        [Then(@"that (.*),(.*) education should be added to user profile")]
+        public void ThenThatEducationShouldBeAddedToUserProfile(string college, string country)
+        {
+            ProfilePage educationObject = new ProfilePage();
+            educationObject.rowEducationPresent(college, country);
+            
+        }
+
 
     }
 }

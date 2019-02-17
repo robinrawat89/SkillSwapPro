@@ -60,6 +60,7 @@ namespace SpecflowPages.Pages
 
         }
 
+        //Adding New Language
         public void addNewLanguage(string language, string languageLevel)
         {
             //Enter value in Add Language field
@@ -86,7 +87,7 @@ namespace SpecflowPages.Pages
 
 
         }
-
+        //Verify Lamguage is added
         public void rowPresent(string language)
         {
 
@@ -116,9 +117,10 @@ namespace SpecflowPages.Pages
 
         }
 
+        //Adding New SKill
         public void addNewSkill(string skill, string skillLevel)
         {
-            //Enter value in Add Language field
+            //Enter value in Add skill field
             IWebElement addSkill = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[1]/input"));
             addSkill.Clear();
             addSkill.Click();
@@ -169,9 +171,100 @@ namespace SpecflowPages.Pages
 
 
             }
-
+            
         }
 
+        //Adding New Education
+        public void addNewEducation(string college, string country, string title, string degree, string year)
+        {
+            //Enter value in College/University name field
+            IWebElement addCollege = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[1]/div[1]/input"));
+            addCollege.Clear();
+            addCollege.Click();
+            addCollege.SendKeys(college);
+
+            //Select value for Country
+            IWebElement DropDownListCountry = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[1]/div[2]/select"));
+            IList<IWebElement> optionsCountry = DropDownListCountry.FindElements(By.TagName("option"));
+            int optionCountCountry = optionsCountry.Count();
+            for (int i = 0; i < optionCountCountry; i++)
+            {
+                 if (optionsCountry[i].Text == country)
+                {
+                    optionsCountry[i].Click();
+                    break;
+                }
+
+            }
+
+            //Select value for Title
+            IWebElement DropDownListTitle = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[2]/div[1]/select"));
+            IList<IWebElement> optionsTitle = DropDownListTitle.FindElements(By.TagName("option"));
+            int optionCountTitle = optionsTitle.Count();
+            for (int i = 0; i < optionCountTitle; i++)
+            {
+                if (optionsTitle[i].Text == title)
+                {
+                    optionsTitle[i].Click();
+                    break;
+                }
+
+            }
+
+            //Enter value in Degree field
+            IWebElement addDegree = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[2]/div[2]/input"));
+            addDegree.Clear();
+            addDegree.Click();
+            addDegree.SendKeys(degree);
+
+            //Select value for Year
+            IWebElement DropDownListYear = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/div/div[2]/div[3]/select"));
+            IList<IWebElement> optionsYear = DropDownListYear.FindElements(By.TagName("option"));
+            int optionCountYear = optionsYear.Count();
+            for (int i = 0; i < optionCountYear; i++)
+            {
+                if (optionsYear[i].Text == year)
+                {
+                    optionsYear[i].Click();
+                    break;
+                }
+
+            }
+
+            //Click Add Button after enter skill and skill level
+            IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='sixteen wide field']/input[1]"));
+            clickAdd.Click();
+        }
+
+        //Verify Education is added
+        public void rowEducationPresent(string college, string country)
+        {
+
+            bool educationPresent = false;
+            IWebElement tableElement = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/table"));
+            IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("tbody"));
+
+            foreach (IWebElement row in tableRow)
+            {
+                var p = row.Text;
+                if (row.Text.Contains(college) && row.Text.Contains(country))
+                {
+                    educationPresent = true;
+                    SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "EducationAdded");
+                    //CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
+
+                    break;
+                }
+                else;
+
+                educationPresent = false;
+                SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "EducationNotAdded");
+                //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
+
+
+            }
+
+        }
 
     }
 }
