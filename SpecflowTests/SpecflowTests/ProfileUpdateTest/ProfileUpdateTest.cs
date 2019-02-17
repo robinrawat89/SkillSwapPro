@@ -117,6 +117,21 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
             
         }
 
+        //Adding new Certificate
+        [When(@"User add a new (.*), (.*) and (.*)")]
+        public void WhenUserAddANewAnd(string certificate, string certificateFrom, string year)
+        {
+            ProfilePage certificateObject = new ProfilePage();
+            certificateObject.addNewCertificate(certificate, certificateFrom, year);
+        }
+
+        [Then(@"that (.*) certificate should be added to user profile")]
+        public void ThenThatCertificateShouldBeAddedToUserProfile(string certificate)
+        {
+            ProfilePage certificateObject = new ProfilePage();
+            certificateObject.rowCertificatePresent(certificate);
+        }
+
 
     }
 }

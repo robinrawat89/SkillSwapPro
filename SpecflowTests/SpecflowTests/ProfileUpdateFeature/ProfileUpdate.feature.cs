@@ -97,9 +97,9 @@ testRunner.Then("User is able to Login", ((string)(null)), ((TechTalk.SpecFlow.T
 #line hidden
         }
         
-        public virtual void _6CheckIfUserCouldAbleToAddLanguagesIntoProfile(string language, string languageLevel, string[] exampleTags)
+        public virtual void _6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile(string language, string languageLevel, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Check if user could able to add languages into profile", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Check whether user could able to add languages into profile", exampleTags);
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -117,21 +117,21 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("6 Check if user could able to add languages into profile: French")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("6 Check whether user could able to add languages into profile: French")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "French")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Language", "French")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Language Level", "Basic")]
-        public virtual void _6CheckIfUserCouldAbleToAddLanguagesIntoProfile_French()
+        public virtual void _6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile_French()
         {
 #line 13
-this._6CheckIfUserCouldAbleToAddLanguagesIntoProfile("French", "Basic", ((string[])(null)));
+this._6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile("French", "Basic", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void _7CheckIfUserCouldAbleToAddSkillsIntoProfile(string skill, string skillLevel, string[] exampleTags)
+        public virtual void _7CheckWhetherUserCouldAbleToAddSkillsIntoProfile(string skill, string skillLevel, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 Check if user could able to add skills into profile", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 Check whether user could able to add skills into profile", exampleTags);
 #line 24
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -149,21 +149,21 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("7 Check if user could able to add skills into profile: C#")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("7 Check whether user could able to add skills into profile: C#")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "C#")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill", "C#")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill Level", "Intermediate")]
-        public virtual void _7CheckIfUserCouldAbleToAddSkillsIntoProfile_C()
+        public virtual void _7CheckWhetherUserCouldAbleToAddSkillsIntoProfile_C()
         {
 #line 24
-this._7CheckIfUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((string[])(null)));
+this._7CheckWhetherUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((string[])(null)));
 #line hidden
         }
         
-        public virtual void _8CheckIfUserCouldAbleToAddEducationIntoProfile(string college, string country, string title, string degree, string yearOfGraduation, string[] exampleTags)
+        public virtual void _8CheckWhetherUserCouldAbleToAddEducationIntoProfile(string college, string country, string title, string degree, string yearOfGraduation, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 Check if user could able to add education into profile", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 Check whether user could able to add education into profile", exampleTags);
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -181,8 +181,8 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("8 Check if user could able to add education into profile: Unitec Institute of Tec" +
-            "hnology")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("8 Check whether user could able to add education into profile: Unitec Institute o" +
+            "f Technology")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Unitec Institute of Technology")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:College", "Unitec Institute of Technology")]
@@ -190,10 +190,43 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Title", "B.A")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Degree", "Honors")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year of Graduation", "2019")]
-        public virtual void _8CheckIfUserCouldAbleToAddEducationIntoProfile_UnitecInstituteOfTechnology()
+        public virtual void _8CheckWhetherUserCouldAbleToAddEducationIntoProfile_UnitecInstituteOfTechnology()
         {
 #line 35
-this._8CheckIfUserCouldAbleToAddEducationIntoProfile("Unitec Institute of Technology", "Afghanistan", "B.A", "Honors", "2019", ((string[])(null)));
+this._8CheckWhetherUserCouldAbleToAddEducationIntoProfile("Unitec Institute of Technology", "Afghanistan", "B.A", "Honors", "2019", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void _9CheckIfUserCouldAbleToAddCertificationIntoProfile(string certificate, string from, string year, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 Check if user could able to add Certification into profile", exampleTags);
+#line 45
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 46
+ testRunner.Given("User clicked on the \'Certifications\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 47
+ testRunner.And("User click on Add New button for \'Certifications\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.When(string.Format("User add a new {0}, {1} and {2}", certificate, from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.Then(string.Format("that {0} certificate should be added to user profile", certificate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("9 Check if user could able to add Certification into profile: ISTQB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "ISTQB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Certificate", "ISTQB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:From", "ANZTB")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
+        public virtual void _9CheckIfUserCouldAbleToAddCertificationIntoProfile_ISTQB()
+        {
+#line 45
+this._9CheckIfUserCouldAbleToAddCertificationIntoProfile("ISTQB", "ANZTB", "2018", ((string[])(null)));
 #line hidden
         }
     }

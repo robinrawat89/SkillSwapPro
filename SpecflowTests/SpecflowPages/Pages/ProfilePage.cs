@@ -171,7 +171,7 @@ namespace SpecflowPages.Pages
 
 
             }
-            
+
         }
 
         //Adding New Education
@@ -189,7 +189,7 @@ namespace SpecflowPages.Pages
             int optionCountCountry = optionsCountry.Count();
             for (int i = 0; i < optionCountCountry; i++)
             {
-                 if (optionsCountry[i].Text == country)
+                if (optionsCountry[i].Text == country)
                 {
                     optionsCountry[i].Click();
                     break;
@@ -231,7 +231,7 @@ namespace SpecflowPages.Pages
 
             }
 
-            //Click Add Button after enter skill and skill level
+            //Click Add Button after enter Education deatils
             IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='sixteen wide field']/input[1]"));
             clickAdd.Click();
         }
@@ -252,7 +252,6 @@ namespace SpecflowPages.Pages
                     educationPresent = true;
                     SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "EducationAdded");
                     //CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
-
                     break;
                 }
                 else;
@@ -266,5 +265,71 @@ namespace SpecflowPages.Pages
 
         }
 
+        //Adding new Certification
+        public void addNewCertificate(string certificate, string certFrom, string year)
+        {
+            //Enter value in Add Certificate field
+            IWebElement addCertificate = Driver.webDriver.FindElement(By.Name("certificationName"));
+            addCertificate.Clear();
+            addCertificate.Click();
+            addCertificate.SendKeys(certificate);
+
+            //Add Certifiacte From
+            IWebElement addCertificateFrom = Driver.webDriver.FindElement(By.Name("certificationFrom"));
+            addCertificateFrom.Clear();
+            addCertificateFrom.Click();
+            addCertificateFrom.SendKeys(certFrom);
+
+            //Select value for year
+            IWebElement DropDownList = Driver.webDriver.FindElement(By.XPath("//*[@class='ui fluid dropdown']"));
+            IList<IWebElement> options = DropDownList.FindElements(By.TagName("option"));
+            int optionCount = options.Count();
+            for (int i = 0; i < optionCount; i++)
+            {
+                if (options[i].Text == year)
+                {
+                    options[i].Click();
+                    break;
+                }
+
+            }
+
+            //Click Add Button after enter Education deatils
+            IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='five wide field']/input[1]"));
+            clickAdd.Click();
+
+        }
+
+
+        //Verify Certificate is added
+      
+        public void rowCertificatePresent(string certificate)
+        {
+
+            bool certificatePresent = false;
+            IWebElement tableElement = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/table"));
+            IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("td"));
+
+            foreach (IWebElement row in tableRow)
+            {
+                var p = row.Text;
+                if (row.Text.Contains(certificate))
+                {
+                    certificatePresent = true;
+                    SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "CertificateAdded");
+                    //CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
+
+                    break;
+                }
+                else;
+
+                certificatePresent = false;
+                SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "CertificateNotAdded");
+                //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
+
+
+            }
+
+        }
     }
 }
