@@ -49,7 +49,6 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
 
         //Background Steps End
 
-
         //Add Languages to Profile
         [Given(@"User clicked on the '(.*)' tab under Profile page")]
         public void GivenUserClickedOnTheTabUnderProfilePage(string menuLanguage)
@@ -102,12 +101,16 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
         }
 
         //Adding New Education
-        [When(@"User add a new (.*), (.*),(.*),(.*) and (.*)")]
-        public void WhenUserAddANewAnd(string college, string country, string title, string degree, string year)
+
+        
+        [When(@"User add a Education (.*), (.*),(.*),(.*) and (.*)")]
+        public void WhenUserAddAEducationAnd(string college, string country, string title, string degree, string year)
         {
             ProfilePage educationObject = new ProfilePage();
             educationObject.addNewEducation(college, country, title, degree, year);
         }
+
+
 
         [Then(@"that (.*),(.*) education should be added to user profile")]
         public void ThenThatEducationShouldBeAddedToUserProfile(string college, string country)

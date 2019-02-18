@@ -10,6 +10,47 @@ And   User enter valid credentials "utest5896@gmail.com" and "test@1234"
 Then  User is able to Login
 
 
+Scenario: 1 Check if user could able to add Description for the profile
+	Given User clicked on the Edit icon for Description field
+	And  User clicked on the Description box
+	When User enter text for description
+	Then User is able to view descritpion for the profile
+
+	
+Scenario Outline: 2 Check if user could able to edit the name for the profile
+	Given User clicked on the User Naem on Profile page
+	When User edit <FirstName> and <LastName>
+	And  User click Save button
+	Then name is updated for the User profile
+
+
+Examples:
+		| FirstName     | LastName     |
+		| TestFirstName | TestLastName |
+		
+		
+
+Scenario: 3 Check if user could able to add Availability for the profile
+	Given  User clicked on the edit icon for availability
+	When User click the dropdown icon for availability
+	And User select the "Full Time" option
+	Then User is able to select the  availability for the profile
+
+
+Scenario: 4 Check if user could able to add hours for the profile
+	Given  User clicked on the edit icon for Hours
+	When User click the dropdown icon for Hours
+	And User select the "Less than 30hours a week" option
+	Then User is able to select the hours for the profile
+
+
+Scenario: 5 Check if user could able to add Earn target for the profile
+	Given  User clicked on the edit icon for Earn target
+	When User click the dropdown icon for Earn target
+	And User select the "Less than $500 per month" option for Earn target
+	Then User is able to select the Earn target for the profile
+
+
 Scenario Outline: 6 Check whether user could able to add languages into profile
 	Given User clicked on the 'Languages' tab under Profile page
 	And  User click on Add New button for 'Languages'
@@ -35,12 +76,13 @@ Examples:
 Scenario Outline: 8 Check whether user could able to add education into profile
 	Given User clicked on the 'Education' tab under Profile page
 	And  User click on Add New button for 'Education'
-	When User add a new <College>, <Country>,<Title>,<Degree> and <Year of Graduation>
+	When User add a Education <College>, <Country>,<Title>,<Degree> and <Year of Graduation>
 	Then that <College>,<Country> education should be added to user profile
 
-Examples:
+	Examples:
 		| College                        | Country     | Title | Degree | Year of Graduation |
-		| Unitec Institute of Technology | Afghanistan | B.A   | Honors | 2019               |
+		| Unitec Institute of Technology | Afghanistan | B.A   | Honors | 2018               |
+
 
 Scenario Outline: 9 Check if user could able to add Certification into profile
 	Given User clicked on the 'Certifications' tab under Profile page

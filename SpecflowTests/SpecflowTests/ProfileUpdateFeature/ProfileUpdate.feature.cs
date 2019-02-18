@@ -97,20 +97,140 @@ testRunner.Then("User is able to Login", ((string)(null)), ((TechTalk.SpecFlow.T
 #line hidden
         }
         
-        public virtual void _6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile(string language, string languageLevel, string[] exampleTags)
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("1 Check if user could able to add Description for the profile")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        public virtual void _1CheckIfUserCouldAbleToAddDescriptionForTheProfile()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Check whether user could able to add languages into profile", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1 Check if user could able to add Description for the profile", ((string[])(null)));
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 14
- testRunner.Given("User clicked on the \'Languages\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User clicked on the Edit icon for Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 15
- testRunner.And("User click on Add New button for \'Languages\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicked on the Description box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.When(string.Format("User is able to add a new entry for Language with values {0} and {1}", language, languageLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enter text for description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
+ testRunner.Then("User is able to view descritpion for the profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void _2CheckIfUserCouldAbleToEditTheNameForTheProfile(string firstName, string lastName, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 Check if user could able to edit the name for the profile", exampleTags);
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 21
+ testRunner.Given("User clicked on the User Naem on Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+ testRunner.When(string.Format("User edit {0} and {1}", firstName, lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.And("User click Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.Then("name is updated for the User profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("2 Check if user could able to edit the name for the profile: TestFirstName")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "TestFirstName")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FirstName", "TestFirstName")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:LastName", "TestLastName")]
+        public virtual void _2CheckIfUserCouldAbleToEditTheNameForTheProfile_TestFirstName()
+        {
+#line 20
+this._2CheckIfUserCouldAbleToEditTheNameForTheProfile("TestFirstName", "TestLastName", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("3 Check if user could able to add Availability for the profile")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        public virtual void _3CheckIfUserCouldAbleToAddAvailabilityForTheProfile()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("3 Check if user could able to add Availability for the profile", ((string[])(null)));
+#line 33
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 34
+ testRunner.Given("User clicked on the edit icon for availability", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 35
+ testRunner.When("User click the dropdown icon for availability", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+ testRunner.And("User select the \"Full Time\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.Then("User is able to select the  availability for the profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("4 Check if user could able to add hours for the profile")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        public virtual void _4CheckIfUserCouldAbleToAddHoursForTheProfile()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("4 Check if user could able to add hours for the profile", ((string[])(null)));
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 41
+ testRunner.Given("User clicked on the edit icon for Hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+ testRunner.When("User click the dropdown icon for Hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.And("User select the \"Less than 30hours a week\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.Then("User is able to select the hours for the profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("5 Check if user could able to add Earn target for the profile")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "User Profile Details")]
+        public virtual void _5CheckIfUserCouldAbleToAddEarnTargetForTheProfile()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("5 Check if user could able to add Earn target for the profile", ((string[])(null)));
+#line 47
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 48
+ testRunner.Given("User clicked on the edit icon for Earn target", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 49
+ testRunner.When("User click the dropdown icon for Earn target", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.And("User select the \"Less than $500 per month\" option for Earn target", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.Then("User is able to select the Earn target for the profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        public virtual void _6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile(string language, string languageLevel, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("6 Check whether user could able to add languages into profile", exampleTags);
+#line 54
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 55
+ testRunner.Given("User clicked on the \'Languages\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 56
+ testRunner.And("User click on Add New button for \'Languages\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.When(string.Format("User is able to add a new entry for Language with values {0} and {1}", language, languageLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 58
  testRunner.Then(string.Format("that {0} language should be added to user profile", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -124,7 +244,7 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Language Level", "Basic")]
         public virtual void _6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile_French()
         {
-#line 13
+#line 54
 this._6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile("French", "Basic", ((string[])(null)));
 #line hidden
         }
@@ -132,17 +252,17 @@ this._6CheckWhetherUserCouldAbleToAddLanguagesIntoProfile("French", "Basic", ((s
         public virtual void _7CheckWhetherUserCouldAbleToAddSkillsIntoProfile(string skill, string skillLevel, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("7 Check whether user could able to add skills into profile", exampleTags);
-#line 24
+#line 65
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 25
+#line 66
  testRunner.Given("User clicked on the \'Skills\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
+#line 67
  testRunner.And("User click on Add New button for \'Skills\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
+#line 68
  testRunner.When(string.Format("User add a new skill {0} and {1}", skill, skillLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
+#line 69
  testRunner.Then(string.Format("that {0} skill should be added to user profile", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,7 +276,7 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill Level", "Intermediate")]
         public virtual void _7CheckWhetherUserCouldAbleToAddSkillsIntoProfile_C()
         {
-#line 24
+#line 65
 this._7CheckWhetherUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((string[])(null)));
 #line hidden
         }
@@ -164,17 +284,17 @@ this._7CheckWhetherUserCouldAbleToAddSkillsIntoProfile("C#", "Intermediate", ((s
         public virtual void _8CheckWhetherUserCouldAbleToAddEducationIntoProfile(string college, string country, string title, string degree, string yearOfGraduation, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("8 Check whether user could able to add education into profile", exampleTags);
-#line 35
+#line 76
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 36
+#line 77
  testRunner.Given("User clicked on the \'Education\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 37
+#line 78
  testRunner.And("User click on Add New button for \'Education\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.When(string.Format("User add a new {0}, {1},{2},{3} and {4}", college, country, title, degree, yearOfGraduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 79
+ testRunner.When(string.Format("User add a Education {0}, {1},{2},{3} and {4}", college, country, title, degree, yearOfGraduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
  testRunner.Then(string.Format("that {0},{1} education should be added to user profile", college, country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -189,28 +309,28 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Country", "Afghanistan")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Title", "B.A")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Degree", "Honors")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year of Graduation", "2019")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year of Graduation", "2018")]
         public virtual void _8CheckWhetherUserCouldAbleToAddEducationIntoProfile_UnitecInstituteOfTechnology()
         {
-#line 35
-this._8CheckWhetherUserCouldAbleToAddEducationIntoProfile("Unitec Institute of Technology", "Afghanistan", "B.A", "Honors", "2019", ((string[])(null)));
+#line 76
+this._8CheckWhetherUserCouldAbleToAddEducationIntoProfile("Unitec Institute of Technology", "Afghanistan", "B.A", "Honors", "2018", ((string[])(null)));
 #line hidden
         }
         
         public virtual void _9CheckIfUserCouldAbleToAddCertificationIntoProfile(string certificate, string from, string year, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("9 Check if user could able to add Certification into profile", exampleTags);
-#line 45
+#line 87
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 46
+#line 88
  testRunner.Given("User clicked on the \'Certifications\' tab under Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
+#line 89
  testRunner.And("User click on Add New button for \'Certifications\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 90
  testRunner.When(string.Format("User add a new {0}, {1} and {2}", certificate, from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 49
+#line 91
  testRunner.Then(string.Format("that {0} certificate should be added to user profile", certificate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -225,7 +345,7 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Year", "2018")]
         public virtual void _9CheckIfUserCouldAbleToAddCertificationIntoProfile_ISTQB()
         {
-#line 45
+#line 87
 this._9CheckIfUserCouldAbleToAddCertificationIntoProfile("ISTQB", "ANZTB", "2018", ((string[])(null)));
 #line hidden
         }
