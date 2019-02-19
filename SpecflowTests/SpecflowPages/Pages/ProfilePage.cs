@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using RelevantCodes.ExtentReports;
 using System;
 using System.Collections.Generic;
@@ -115,6 +116,55 @@ namespace SpecflowPages.Pages
 
             }
 
+        }
+
+        //Deleting a Language
+
+        public void deleteLanguage(string language)
+        {
+            var deleteLanguage = new ProfilePage();
+            var barXpath = "//tr[.//td='"+ language +"']/td[3]/span[2]/i";
+            IWebElement _menuClickoption = deleteLanguage.deleteLanguageOptions(barXpath);
+            _menuClickoption.Click();
+            Driver.TurnOnWait();
+
+        }
+
+        //function to find menu options 
+        public IWebElement deleteLanguageOptions(string menuOptionLocator)
+        {
+
+            var toolMenu = Driver.webDriver.FindElement(By.XPath(menuOptionLocator));
+            return toolMenu;
+
+        }
+
+        //Verify Langauge is deleted from profile
+        public void languageDeletedConfirm(string langauge)
+        {
+            bool languagePresent = false;
+            IWebElement tableElement = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/table"));
+            IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("tbody"));
+            Driver.TurnOnWait();
+            int languageCountAfterDelete = tableRow.Count();
+            Driver.TurnOnWait();
+            foreach (IWebElement row in tableRow)
+            {                
+                    var p = row.Text;
+
+                    if (row.Text.Contains(langauge))
+                    {
+                        languagePresent = true;
+                    break;
+                        //SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageNotDeleted");
+
+                    }
+            }
+            Driver.TurnOnWait();
+            languagePresent = false;
+            SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageDeleted");
+            
+            // CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
         }
 
         //Adding New SKill

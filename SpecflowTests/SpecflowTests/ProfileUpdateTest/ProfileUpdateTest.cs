@@ -49,6 +49,7 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
 
         //Background Steps End
 
+
         //Add Languages to Profile
         [Given(@"User clicked on the '(.*)' tab under Profile page")]
         public void GivenUserClickedOnTheTabUnderProfilePage(string menuLanguage)
@@ -83,7 +84,22 @@ namespace SpecflowTests.ProfileUpdateTest.StepDefinitions
             languageObject.rowPresent(language);
         }
 
-        
+        //Delet a Language
+
+        [When(@"User is able to delete Language with values (.*)")]
+        public void WhenUserIsAbleToDeleteLanguageWithValues(string language)
+        {
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.deleteLanguage(language);
+        }
+
+        [Then(@"that (.*) language should be deleted from user profile")]
+        public void ThenThatLanguageShouldBeDeletedFromUserProfile(string language)
+        {
+            ProfilePage languageObject = new ProfilePage();
+            languageObject.languageDeletedConfirm(language);
+        }
+
         //Adding a New Skill
 
         [When(@"User add a new skill (.*) and (.*)")]

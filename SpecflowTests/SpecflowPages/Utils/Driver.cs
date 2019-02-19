@@ -43,7 +43,7 @@ namespace SpecflowPages
         //Implicit Wait
         public static void TurnOnWait()
         {
-            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10000);
 
         }
         //Navigate to Website URL
