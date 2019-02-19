@@ -126,7 +126,7 @@ namespace SpecflowPages.Pages
             var barXpath = "//tr[.//td='"+ language +"']/td[3]/span[2]/i";
             IWebElement _menuClickoption = deleteLanguage.deleteLanguageOptions(barXpath);
             _menuClickoption.Click();
-            Driver.TurnOnWait();
+            Driver.webDriver.SwitchTo().DefaultContent();
 
         }
 
