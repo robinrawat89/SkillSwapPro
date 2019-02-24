@@ -12,3 +12,4 @@ D:\Project_Automation\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\Specfl
 D:\Project_Automation\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\obj\Debug\Specflow_Pages.csproj.CopyComplete
 D:\Project_Automation\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.dll
 D:\Project_Automation\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.pdb
+D:\Project_Automation\SpecflowTests-Base\SpecflowTests-Base\SpecflowTests\SpecflowPages\obj\Debug\Specflow_Pages.csprojAssemblyReference.cache

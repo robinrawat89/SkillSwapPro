@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using static SpecflowPages.CommonMethods;
 
@@ -85,16 +86,19 @@ namespace SpecflowPages.Pages
             //Click Add Button after enter lanaguage and language level
             IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='six wide field']/input[1]"));
             clickAdd.Click();
+            Thread.Sleep(5000);
+            
 
 
         }
         //Verify Lamguage is added
         public void rowPresent(string language)
         {
-
+           
+            
             bool languageFound = false;
             IWebElement tableElement = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/table"));
-            IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("td"));
+            IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("tbody"));
 
             foreach (IWebElement row in tableRow)
             {
@@ -104,14 +108,13 @@ namespace SpecflowPages.Pages
                     languageFound = true;
                     SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageAdded");
                     //CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
-
                     break;
                 }
-                else;
+                //else;
 
-                languageFound = false;
-                SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageNotAdded");
-                //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
+                //languageFound = false;
+                //SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageNotAdded");
+                ////CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
 
 
             }
@@ -126,6 +129,7 @@ namespace SpecflowPages.Pages
             var barXpath = "//tr[.//td='"+ language +"']/td[3]/span[2]/i";
             IWebElement _menuClickoption = deleteLanguage.deleteLanguageOptions(barXpath);
             _menuClickoption.Click();
+            Thread.Sleep(5000);
             Driver.webDriver.SwitchTo().DefaultContent();
 
         }
@@ -145,9 +149,6 @@ namespace SpecflowPages.Pages
             bool languagePresent = false;
             IWebElement tableElement = Driver.webDriver.FindElement(By.XPath("//*[contains(@class,'active') and contains(@class, 'tab')]/div/div[2]/div/table"));
             IList<IWebElement> tableRow = tableElement.FindElements(By.TagName("tbody"));
-            Driver.TurnOnWait();
-            int languageCountAfterDelete = tableRow.Count();
-            Driver.TurnOnWait();
             foreach (IWebElement row in tableRow)
             {                
                     var p = row.Text;
@@ -155,12 +156,11 @@ namespace SpecflowPages.Pages
                     if (row.Text.Contains(langauge))
                     {
                         languagePresent = true;
-                    break;
-                        //SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageNotDeleted");
+                        SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageNotDeleted");
 
                     }
             }
-            Driver.TurnOnWait();
+            
             languagePresent = false;
             SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "LanguageDeleted");
             
@@ -192,6 +192,7 @@ namespace SpecflowPages.Pages
             //Click Add Button after enter skill and skill level
             IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='buttons-wrapper']/input[1]"));
             clickAdd.Click();
+            Thread.Sleep(5000);
         }
 
         //Verify Skill is added
@@ -284,6 +285,7 @@ namespace SpecflowPages.Pages
             //Click Add Button after enter Education deatils
             IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='sixteen wide field']/input[1]"));
             clickAdd.Click();
+            Thread.Sleep(5000);
         }
 
         //Verify Education is added
@@ -304,14 +306,11 @@ namespace SpecflowPages.Pages
                     //CommonMethods.test.Log(LogStatus.Pass, "Test Passed, Added a Language Successfully");
                     break;
                 }
-                else;
-
-                educationPresent = false;
-                SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "EducationNotAdded");
-                //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
-
-
+               
             }
+            educationPresent = false;
+            SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "EducationNotAdded");
+            //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
 
         }
 
@@ -347,6 +346,7 @@ namespace SpecflowPages.Pages
             //Click Add Button after enter Education deatils
             IWebElement clickAdd = Driver.webDriver.FindElement(By.XPath("//*[@class='five wide field']/input[1]"));
             clickAdd.Click();
+            Thread.Sleep(5000);
 
         }
 
@@ -371,14 +371,11 @@ namespace SpecflowPages.Pages
 
                     break;
                 }
-                else;
-
-                certificatePresent = false;
-                SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "CertificateNotAdded");
-                //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
-
-
+                                
             }
+            certificatePresent = false;
+            SaveScreenShotClass.SaveScreenshot(Driver.webDriver, "CertificateNotAdded");
+            //CommonMethods.test.Log(LogStatus.Fail, "Test Failed, Failed to Add a Language Successfully");
 
         }
     }

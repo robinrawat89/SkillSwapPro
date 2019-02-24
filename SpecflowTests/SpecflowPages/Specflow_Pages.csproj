@@ -69,7 +69,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\ManageListingPagecs.cs" />
     <Compile Include="Pages\ProfilePage.cs" />
+    <Compile Include="Pages\ShareSkillPage.cs" />
     <Compile Include="Utils\CommonMethods.cs" />
     <Compile Include="Utils\ConstantUtils.cs" />
     <Compile Include="Utils\Driver.cs" />
