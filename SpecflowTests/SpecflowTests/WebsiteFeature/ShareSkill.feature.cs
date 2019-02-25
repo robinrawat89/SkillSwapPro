@@ -113,7 +113,7 @@ this.FeatureBackground();
 #line 16
  testRunner.Given("User clicked on the \'Share Skill\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
- testRunner.When(string.Format("User enter the details {0}, {1},{2},{3},{4},{5},{6}, {7},{8}, {9} , {10} , {11}", title, description, category, subcategory, tags, serviceType, locationType, skillTrade, credit, skillExchange, workSamples, active), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User enter the details {0}, {1},{2},{3},{4},{5},{6}, {7}, {8}, {9} , {10} , {11}", title, description, category, subcategory, tags, serviceType, locationType, skillTrade, skillExchange, credit, workSamples, active), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
  testRunner.And("User enter the Available days", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
@@ -136,12 +136,12 @@ this.FeatureBackground();
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill Trade", "Credit")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Skill Exchange", "Availiable")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Credit", "100")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Work Samples", "")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Work Samples", "FileUpload.exe")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Active", "Active")]
         public virtual void _1CheckWhetherUserCouldAbleToAddShareSkillIntoProfile_SkillShare()
         {
 #line 15
-this._1CheckWhetherUserCouldAbleToAddShareSkillIntoProfile("Skill share", "Basic", "Video & Animation", "Lyric & Music Videos", "testSkills", "One-off service", "On-site", "Credit", "Availiable", "100", "", "Active", ((string[])(null)));
+this._1CheckWhetherUserCouldAbleToAddShareSkillIntoProfile("Skill share", "Basic", "Video & Animation", "Lyric & Music Videos", "testSkills", "One-off service", "On-site", "Credit", "Availiable", "100", "FileUpload.exe", "Active", ((string[])(null)));
 #line hidden
         }
     }

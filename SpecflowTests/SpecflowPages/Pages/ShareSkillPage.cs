@@ -126,7 +126,7 @@ namespace SpecflowPages.Pages
                 case "Credit":
                     var radioST2 = Driver.webDriver.FindElement(By.XPath("//*[@class='ui form']/div[8]/div[2]/div/div[2]/div/input"));
                     radioST2.Click();
-                    IWebElement creditEnter = Driver.webDriver.FindElement(By.XPath("//*[@class='field error ']/div/div/div/div/input"));
+                    IWebElement creditEnter = Driver.webDriver.FindElement(By.XPath("//*[@name='charge']"));
                     creditEnter.Click();
                     creditEnter.Clear();
                     creditEnter.SendKeys(credit);
@@ -135,11 +135,16 @@ namespace SpecflowPages.Pages
             }
 
             //Upload Work Samples
-            string a = "C:\\Users\\Dell\\Desktop\\";
-            string b = workSamples;
+            //IWebElement imageUpload = Driver.webDriver.FindElement(By.XPath("//*[@class='huge plus circle icon padding-25']"));
+            //imageUpload.Click();
+            //string a = "C:\\Users\\Dell\\Desktop\\";
+            //string b = workSamples;
+            //Process.Start(a + "" + b);
 
-            Process.Start(a + "" + b);
-            //Process.Start("C:\\Users\\Dell\\Desktop\\FileUpload.exe");
+            IWebElement imageUpload = Driver.webDriver.FindElement(By.XPath("//*[@class='huge plus circle icon padding-25']"));
+            imageUpload.Click();
+            string filePath = @"C:\\Users\\Dell\\Desktop\\" + workSamples + "";
+            Process.Start(filePath);
 
             //Select Active
 

@@ -18,17 +18,15 @@ namespace SpecflowTests.WebsiteTest
         {
             ShareSkillPage shareSkillObject = new ShareSkillPage();
             shareSkillObject.clickMainMenuOptions(skillShare);
-          
+
         }
 
-        [When(@"User enter the details (.*),(.*),(.*),(.*),(.*),(.*),(.*), (.*), (.*),(*),(.*),(.*)")]
-        public void WhenUserEnterTheDetails(string title, string description, string category,string subCategory, string tags, string serviceType, string locationtype, string skillTrade, string skillExchange,string credit, string workSamples, string active)
+        [When(@"User enter the details (.*), (.*),(.*),(.*),(.*),(.*),(.*), (.*),(.*), (.*) , (.*) , (.*)")]
+        public void WhenUserEnterTheDetails(string title, string description, string category, string subCategory, string tags, string serviceType, string locationtype, string skillTrade, string skillExchange, string credit, string workSamples, string active)
         {
             ShareSkillPage shareSkillObject = new ShareSkillPage();
-            shareSkillObject.enterDetails(title,description, category,subCategory,tags,serviceType,locationtype,skillTrade,skillExchange,workSamples,active);
+            shareSkillObject.enterDetails(title, description, category, subCategory, tags, serviceType, locationtype, skillTrade, skillExchange, credit, workSamples, active);
             Thread.Sleep(10000);
-
-            
         }
 
         [When(@"User enter the Available days")]
